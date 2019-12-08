@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/* CSS Reset */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Typography
+ * *********************************** */
+a {
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+* {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+input:not([type=submit]) {
+  -webkit-appearance: none !important;
+  outline: none;
+}
+
+/* Layout
+ * *********************************** */
+::placeholder, input {
+  text-transform: none;
+  font-size: 0.9em;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Elements
+ * *********************************** */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul.inline {
+  display: inline-flex;
+}
+ul.inline li:not(:last-child) {
+  margin-right: 22px;
+}
+ul.inline li a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+img {
+  border-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+
+/* Attributes & states
+ * *********************************** */
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Utility classes
+ * *********************************** */
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  left: -9999px;
+  top: -9999px;
+}
+
+/*
+    Fancy webkit styling
+*/
+::selection {
+  background: #7253EE;
+  color: #ffffff;
+}
+
+input:not([type=submit]) {
+  caret-color: #7253EE;
+}
+
+body {
+  background-color: gainsboro;
+  font-size: 15px;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  padding: 20px;
+}
+
+main {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  align-self: center;
+  position: relative;
+  top: 15vh;
+}
+main div.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  -webkit-box-shadow: 0px 5px 12px -1px #6b686b;
+  -moz-box-shadow: 0px 5px 12px -1px #6b686b;
+  box-shadow: 0px 5px 12px -1px #6b686b;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #f0eef0;
+}
+main div.nav-buttons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+main div.nav-buttons button:active {
+  outline: 1px solid orange;
+}
+
+table {
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 12px -1px #6b686b;
+  -moz-box-shadow: 0px 5px 12px -1px #6b686b;
+  box-shadow: 0px 5px 12px -1px #6b686b;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ffffff;
+}
+table thead tr {
+  background-color: #ffffff !important;
+}
+table thead tr th {
+  width: 25%;
+  text-align: left;
+}
+table tr {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 10px;
+}
+table tr:nth-child(odd) {
+  background-color: #f0eef0;
+}
+table tr:last-child {
+  justify-content: space-between;
+}
+table tbody tr {
+  display: flex;
+}
+table tbody tr td {
+  width: 25%;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  tr:first-of-type {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr:not(:last-child) td {
+    width: 50%;
+  }
+  tr:not(:last-child) td::before {
+    display: block;
+    font-weight: bold;
+  }
+  tr:not(:last-child) td:first-child::before {
+    content: "💰 Coin";
+  }
+  tr:not(:last-child) td:nth-child(2)::before {
+    content: "📄 Code";
+  }
+  tr:not(:last-child) td:nth-child(3)::before {
+    content: "🤑 Price";
+  }
+  tr:not(:last-child) td:last-child::before {
+    content: "📉 Total Supply";
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
