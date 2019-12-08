@@ -2,6 +2,8 @@ const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
 const tableBody = document.querySelector('#tableBody');
 
+
+// fetching data asynchronously from the coinlore endpoint
 const getData = async () => {
   try {
     const response = await fetch('https://api.coinlore.com/api/tickers/');
@@ -14,7 +16,9 @@ const getData = async () => {
 let wholeData = [];
 let activePage = 1;
 
+
 const paginate = async () => {
+  // this is to control the visibility of the navigation buttons 
   if (activePage === wholeData.length / 10) {
     next.style.visibility = 'hidden';
   } else next.style.visibility = 'visible';
@@ -25,6 +29,7 @@ const paginate = async () => {
   } else prev.style.visibility = 'visible';
 
   try {
+    // if an api call has not been made, this section makes sure it is made, and if it has been made, this block makes sure, It is not made again
     if (wholeData.length === 0) {
       prev.style.visibility = 'hidden';
       const { data } = await getData();
@@ -48,6 +53,8 @@ const paginate = async () => {
 
 paginate();
 
+
+// handling click event from the navigation buttons
 next.addEventListener('click', () => {
   activePage += 1;
   paginate();
