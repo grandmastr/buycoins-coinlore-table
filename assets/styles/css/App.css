@@ -196,18 +196,6 @@ q:before {
   top: -9999px;
 }
 
-/*
-    Fancy webkit styling
-*/
-::selection {
-  background: #7253EE;
-  color: #ffffff;
-}
-
-input:not([type=submit]) {
-  caret-color: #7253EE;
-}
-
 body {
   background-color: gainsboro;
   font-size: 15px;
@@ -239,7 +227,7 @@ main div.nav-buttons button {
   background: transparent;
   border: none;
   cursor: pointer;
-  outline: none;
+  tab-index: 0;
 }
 main div.nav-buttons button:active {
   outline: 1px solid orange;
@@ -286,23 +274,23 @@ table tbody tr td {
     left: -9999px;
   }
 
-  tr:not(:last-child) td {
+  tr:not(:first-child) td {
     width: 50%;
   }
-  tr:not(:last-child) td::before {
+  tr:not(:first-child) td::before {
     display: block;
     font-weight: bold;
   }
-  tr:not(:last-child) td:first-child::before {
+  tr:not(:first-child) td:first-child::before {
     content: "💰 Coin";
   }
-  tr:not(:last-child) td:nth-child(2)::before {
+  tr:not(:first-child) td:nth-child(2)::before {
     content: "📄 Code";
   }
-  tr:not(:last-child) td:nth-child(3)::before {
+  tr:not(:first-child) td:nth-child(3)::before {
     content: "🤑 Price";
   }
-  tr:not(:last-child) td:last-child::before {
+  tr:not(:first-child) td:last-child::before {
     content: "📉 Total Supply";
   }
 }

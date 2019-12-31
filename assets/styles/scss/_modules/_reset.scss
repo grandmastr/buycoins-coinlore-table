@@ -79,7 +79,7 @@ a{
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 body {
@@ -204,14 +204,4 @@ q:before {
     clip: rect(1px, 1px, 1px, 1px);
     left: -9999px;
     top: -9999px;
-}
-/*
-    Fancy webkit styling
-*/
-::selection{
-    background: $secondary-color;
-    color: #ffffff;
-}
-input:not([type="submit"]){
-    caret-color: $secondary-color;
 }

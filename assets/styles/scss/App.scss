@@ -35,10 +35,10 @@ main {
       background: transparent;
       border: none;
       cursor: pointer;
-      outline: none;
       &:active {
         outline: 1px solid orange;
       }
+      tab-index: 0;
     }
   }
 }
@@ -96,7 +96,7 @@ table {
     left: -9999px;
   }
 
-  tr:not(:last-child) td {
+  tr:not(:first-child) td {
     width: 50%;
 
     &::before {
